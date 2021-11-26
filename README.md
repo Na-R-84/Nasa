@@ -1,0 +1,2 @@
+# Nasa
+-Cards som visar bilder från Mars, finns inga bilder ska dettavisas för användaren.-Ett inputfält där användaren kan skriva in sitt namn och få det visat på sidan.När användaren har tryckt ska fält rensas.-Kontrollera att namnet är minst 3 tecken, innan man skrivit in ett namn så ska knappen vara disabled. -Sidan ska vara responsiv fungera i mobil, ipad och desktop. (Mobile First)-Dark mode 
