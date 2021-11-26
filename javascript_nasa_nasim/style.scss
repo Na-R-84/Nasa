@@ -1,0 +1,239 @@
+
+$darkmode-body: #0c294b;
+$primaryColorDarker:#2b486e;
+$darkmode-text: #bfbfbf;
+$lightmode-text:#212121;
+$header-color: #b3b3cc;
+$primaryColor: #574f7d;
+$secondaryColor:#8d7daf;
+$secondaryColorLighter:#e0f0ea;
+$darkmode-dark: #070d3a;
+
+
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    transition: .3s;
+}
+
+.container{
+ 
+    header{
+        display: flex;
+        margin: auto;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding:2%;
+        background-color:$header-color;
+        color: $lightmode-text;
+        h1{
+            font-size: 1rem;
+            font-weight: 700;
+
+        }                                                                     
+        .toggle-txt{
+            font-size: .75rem;
+            color:#212121;
+            padding-right: .2rem;
+            
+        }
+        // Hittas på https://www.w3schools.com/howto/howto_css_switch.asp
+    /* switch - Boxen runt slider */
+    .switchBtn {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        /* Gömmer default HTML checkbox */
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            &:checked {//När den är i kryssad 
+            // https://www.w3schools.com/cssref/sel_element_pluss.asp
+            +.slider { //Gör detta med slider som är Lila bg 
+                background-color: $darkmode-text; 
+                &:before { //Påverkar cirkeln
+                    transform: translateX(26px);//hur långt cirkel förflyttar sig
+                    background-color: $darkmode-dark;
+                }
+            } 
+            }
+            &:focus {//När den är markerad klickad på
+                +.slider{ //Väljer alla .slider som är placerade direkt efter input
+                    //Skugga när man klickar
+                    box-shadow: 0 0 2px $darkmode-dark;
+                }
+            }
+        }
+        /* slider */
+        .slider { //Lila BG 
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $darkmode-dark;
+            border-radius: 34px;
+            transition: .4s;
+            &:before {
+                //Cirkeln i slider
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: $darkmode-text;
+                border-radius: 50%;
+                transition: .4s;
+            }
+        }
+    }
+        
+    }
+    
+    main{
+        margin: 2rem ;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        
+        form{
+            background-color: $header-color;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+       
+            @media (min-width:680px) {
+                margin-top:5rem;
+                label{
+                    margin: 1rem;
+                    font-size: 2rem;
+                    font-weight: 800;
+                    &.label-2{
+                        margin: 0;
+                    }
+                }
+                input{
+                    padding-bottom: .5rem;
+                    #spaceName{
+                        padding:1rem;
+                        width: 400px;
+                    }
+                    #sendBtn{
+                        width: 300px;
+
+                    }
+                }
+            }
+         
+            label{
+                padding: .5rem;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 800;
+                &.label-2{
+                    font-size: 12px;
+                    font-weight: 200;
+                }
+                
+            }
+    
+            input{
+                padding: .7rem;
+                margin-bottom: 0.5rem;
+                border: none;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: 200;
+                &::placeholder{
+                    color:grey;
+                }
+                // &.focusBorder{  // för att kunna focus i input
+                //     outline: none;// ta bort default focus
+                //     border-bottom: orangered;
+                // }
+               
+                &[type="submit"]{
+                    border: none;
+                    background-color: $darkmode-body;
+                    color:$header-color;
+                    transition: .3s; // det fade btn när detta är aktiv eller disabled
+    
+                    // Stylar när knappen är disabled
+                    &:disabled{
+                        background-color: $secondaryColor;
+                        // color:$secondaryColorLighter;
+                        cursor: not-allowed;
+                    }
+                }    
+            }  
+        }
+    }
+    
+    
+    .images{
+        text-align: center;
+        font-family: "poppins";
+        margin-top: 2rem;
+        height: 100vh;
+  
+        h3{
+            padding: 1rem;
+            font-weight:400;
+        }
+        section{
+            @media (min-width:680px) {
+                display: flex;
+                margin: auto;
+                align-items: center;
+            }
+            figure{
+                padding: 2rem;
+                background-color: $header-color;
+                margin:1rem ;
+                
+                .mars-pic{
+                    object-fit: cover;// behövs att sätta höjd och bred för att använda denna 
+                    width: 100%;
+                    height: 100%;
+                } 
+            }
+        }
+    }  
+}
+// dark-mode
+.dark{
+    color: $darkmode-text;
+    .dark-mode{
+    color: $darkmode-text;
+
+    }
+    .container{
+        
+        background-color: $darkmode-body;
+        header,form{
+            background-color: $primaryColorDarker;
+            
+        }
+        .mars-card-container{
+            color: black;
+
+        }
+    }
+}
+// Error
+.error{
+    background-color: rgb(67, 44, 121);
+    border-radius: 4px rgb(25, 9, 63) ;
+    color:$darkmode-text ;
+}

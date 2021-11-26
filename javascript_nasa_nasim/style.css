@@ -1,0 +1,268 @@
+@charset "UTF-8";
+*, html {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  padding: 2%;
+  background-color: #b3b3cc;
+  color: #212121;
+  /* switch - Boxen runt slider */
+}
+
+.container header h1 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.container header .toggle-txt {
+  font-size: .75rem;
+  color: #212121;
+  padding-right: .2rem;
+}
+
+.container header .switchBtn {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  /* Gömmer default HTML checkbox */
+  /* slider */
+}
+
+.container header .switchBtn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.container header .switchBtn input:checked + .slider {
+  background-color: #bfbfbf;
+}
+
+.container header .switchBtn input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+          transform: translateX(26px);
+  background-color: #070d3a;
+}
+
+.container header .switchBtn input:focus + .slider {
+  -webkit-box-shadow: 0 0 2px #070d3a;
+          box-shadow: 0 0 2px #070d3a;
+}
+
+.container header .switchBtn .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #070d3a;
+  border-radius: 34px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.container header .switchBtn .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #bfbfbf;
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.container main {
+  margin: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container main form {
+  background-color: #b3b3cc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+@media (min-width: 680px) {
+  .container main form {
+    margin-top: 5rem;
+  }
+  .container main form label {
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .container main form label.label-2 {
+    margin: 0;
+  }
+  .container main form input {
+    padding-bottom: .5rem;
+  }
+  .container main form input #spaceName {
+    padding: 1rem;
+    width: 400px;
+  }
+  .container main form input #sendBtn {
+    width: 300px;
+  }
+}
+
+.container main form label {
+  padding: .5rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.container main form label.label-2 {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.container main form input {
+  padding: .7rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.container main form input::-webkit-input-placeholder {
+  color: grey;
+}
+
+.container main form input:-ms-input-placeholder {
+  color: grey;
+}
+
+.container main form input::-ms-input-placeholder {
+  color: grey;
+}
+
+.container main form input::placeholder {
+  color: grey;
+}
+
+.container main form input[type="submit"] {
+  border: none;
+  background-color: #0c294b;
+  color: #b3b3cc;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.container main form input[type="submit"]:disabled {
+  background-color: #8d7daf;
+  cursor: not-allowed;
+}
+
+.container .images {
+  text-align: center;
+  font-family: "poppins";
+  margin-top: 2rem;
+  height: 100vh;
+}
+
+.container .images h3 {
+  padding: 1rem;
+  font-weight: 400;
+}
+
+@media (min-width: 680px) {
+  .container .images section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.container .images section figure {
+  padding: 2rem;
+  background-color: #b3b3cc;
+  margin: 1rem;
+}
+
+.container .images section figure .mars-pic {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.dark {
+  color: #bfbfbf;
+}
+
+.dark .dark-mode {
+  color: #bfbfbf;
+}
+
+.dark .container {
+  background-color: #0c294b;
+}
+
+.dark .container header, .dark .container form {
+  background-color: #2b486e;
+}
+
+.dark .container .mars-card-container {
+  color: black;
+}
+
+.error {
+  background-color: #432c79;
+  border-radius: 4px #19093f;
+  color: #bfbfbf;
+}
+/*# sourceMappingURL=style.css.map */
